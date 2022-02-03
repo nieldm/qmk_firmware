@@ -44,8 +44,10 @@ enum layers {
 #define HM_S LALT_T(KC_S)
 #define HM_D LGUI_T(KC_D)
 #define HM_F LSFT_T(KC_F)
+#define HM_G HYPR(KC_G)
 
 // Right-hand home row mods
+#define HM_H HYPR(KC_H)
 #define HM_J RSFT_T(KC_J)
 #define HM_K RGUI_T(KC_K)
 #define HM_L LALT_T(KC_L)
@@ -73,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_QWERTY] = LAYOUT(
      KC_TAB  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P , KC_BSPC,
-     CTL_ESC , HM_A ,  HM_S   ,  HM_D  ,   HM_F ,   KC_G ,                                        KC_H,   HM_J ,  HM_K ,   HM_L ,HM_SCLN,CTL_QUOT,
+     CTL_ESC , HM_A ,  HM_S   ,  HM_D  ,   HM_F ,   HM_G ,                                        HM_H,   HM_J ,  HM_K ,   HM_L ,HM_SCLN,CTL_QUOT,
      KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , KC_LBRC,KC_CAPS,     FKEYS  , KC_RBRC, KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
                                 ADJUST , KC_LGUI, ALT_ENT, KC_SPC , NAV   ,     SYM    , KC_SPC ,KC_RALT, KC_RGUI, KC_APP
     ),
@@ -94,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_NAV] = LAYOUT(
       _______ ,  KC_KP_1 ,   KC_KP_2 ,   KC_KP_3 ,  KC_KP_4 ,  KC_KP_5,                                   KC_PGUP, KC_HOME, KC_UP,   KC_END,  KC_VOLU, KC_DEL,
-      _______ ,  KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT,  PB_8 ,                                     KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_VOLD, KC_INS,
+      _______ ,  KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT,  KC_F19 ,                                     KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_VOLD, KC_INS,
       _______ ,  KC_KP_6 ,  KC_KP_7 ,KC_KP_8,KC_KP_9,KC_KP_0,KC_KP_DOT ,KC_SLCK, _______, _______,KC_PAUSE, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_PSCR,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
@@ -307,6 +309,8 @@ bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
         case HM_L:
         case HM_S:
         case HM_SCLN:
+        case HM_G:
+        case HM_H:
             return true;
         default:
             return false;
@@ -323,6 +327,8 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
         case HM_L:
         case HM_S:
         case HM_SCLN:
+        case HM_G:
+        case HM_H:
             return true;
         default:
             return false;
