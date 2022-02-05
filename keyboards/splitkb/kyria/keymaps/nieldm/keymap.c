@@ -44,10 +44,10 @@ enum layers {
 #define HM_S LALT_T(KC_S)
 #define HM_D LGUI_T(KC_D)
 #define HM_F LSFT_T(KC_F)
-#define HM_G HYPR(KC_G)
+#define HM_G HYPR_T(KC_G)
 
 // Right-hand home row mods
-#define HM_H HYPR(KC_H)
+#define HM_H HYPR_T(KC_H)
 #define HM_J RSFT_T(KC_J)
 #define HM_K RGUI_T(KC_K)
 #define HM_L LALT_T(KC_L)
@@ -226,7 +226,7 @@ bool oled_task_user(void) {
         // clang-format on
 
         oled_write_P(qmk_logo, false);
-        oled_write_P(PSTR("Kyria nieldm 0.1\n\n"), false);
+        oled_write_P(PSTR("Kyria nieldm 0.21\n\n"), false);
 
         // Host Keyboard Layer Status
         oled_write_P(PSTR("Layer: "), false);
