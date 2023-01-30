@@ -35,6 +35,12 @@
 
 #define PERMISSIVE_HOLD_PER_KEY
 
+// This will make each halve know if it's left or right so you can connect any of the 2 halves
+// For Compiling
+// Elite-C: qmk flash -c -bl dfu-split-left
+// ProMicro: qmk flash -c -bl avrdude-split-right
+#define EE_HANDS
+
 // If you are using an Elite C rev3 on the slave side, uncomment the lines below:
 // #define SPLIT_USB_DETECT
 // #define NO_USB_STARTUP_CHECK
